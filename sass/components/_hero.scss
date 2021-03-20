@@ -15,10 +15,6 @@
     overflow: hidden;
     background-color: var(--color-grey-700);
     margin: auto;
-
-    & img {
-      object-fit: cover;
-    }
   }
 
   &__title {

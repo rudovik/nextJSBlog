@@ -9,6 +9,7 @@ const Hero = () => {
           alt='An image showing Rudovik'
           width={300}
           height={300}
+          objectFit={'cover'}
         />
       </div>
       <h1 className='hero__title'>Hi, I'm Rudovik</h1>
