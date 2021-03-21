@@ -1,12 +1,17 @@
+import Head from 'next/head'
 import PostContent from '../../components/posts/post-detail/post-content'
 
 import { getPostData, getPostsFiles } from '../../lib/posts-util'
 
-const PostDetailPage = ({ post }) => {
+const PostDetailPage = ({ post: { title, excerpt }, post }) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name='description' content={excerpt} />
+      </Head>
       <PostContent post={post} />
-    </div>
+    </>
   )
 }
 
@@ -28,7 +33,7 @@ export const getStaticPaths = () => {
 
   return {
     paths: slugs.map((slug) => ({ params: { slug: slug } })),
-    fallback: false,
+    fallback: false, // true, 'blocking'
   }
 }
 
